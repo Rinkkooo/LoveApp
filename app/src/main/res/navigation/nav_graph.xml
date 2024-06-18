@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loveCalcFragment">
+
+    <fragment
+        android:id="@+id/loveCalcFragment"
+        android:name="com.example.loveapp.fragments.LoveCalcFragment"
+        android:label="fragment_love_calc"
+        tools:layout="@layout/fragment_love_calc">
+        <action
+            android:id="@+id/action_loveCalcFragment_to_loveResultFragment"
+            app:argType="com.example.loveapp.fragments.LoveResultFragmentArgs"
+            app:destination="@id/loveResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loveResultFragment"
+        android:name="com.example.loveapp.fragments.LoveResultFragment"
+        android:label="fragment_love_result"
+        tools:layout="@layout/fragment_love_result">
+        <argument
+            android:name="firstName"
+            app:argType="string" />
+        <argument
+            android:name="secondName"
+            app:argType="string" />
+        <argument
+            android:name="percentage"
+            app:argType="string" />
+        <argument
+            android:name="result"
+            app:argType="string" />
+
+    </fragment>
+</navigation>
