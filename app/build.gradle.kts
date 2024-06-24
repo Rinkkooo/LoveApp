@@ -56,7 +56,9 @@ dependencies {
     implementation(libs.converter.gson)
 
     //Navigation
-    val navVersion = "2.7.7"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    //Pagination
+    implementation(libs.androidx.paging.runtime.ktx)
 }

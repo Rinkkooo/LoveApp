@@ -1,5 +1,6 @@
 package com.example.loveapp
 
+import com.example.loveapp.model.LoveResult
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
