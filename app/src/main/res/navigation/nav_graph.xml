@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loveCalcFragment"
-        android:name="com.example.loveapp.view.fragments.LoveCalcFragment"
+        android:name="com.example.loveapp.fragments.LoveCalcFragment"
         android:label="fragment_love_calc"
         tools:layout="@layout/fragment_love_calc">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/loveResultFragment"
-        android:name="com.example.loveapp.view.fragments.LoveResultFragment"
+        android:name="com.example.loveapp.fragments.LoveResultFragment"
         android:label="fragment_love_result"
         tools:layout="@layout/fragment_love_result">
         <argument
