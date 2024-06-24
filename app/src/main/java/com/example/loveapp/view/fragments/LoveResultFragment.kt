@@ -1,4 +1,4 @@
-package com.example.loveapp.fragments
+package com.example.loveapp.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
