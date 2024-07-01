@@ -14,6 +14,9 @@
             android:id="@+id/action_loveCalcFragment_to_loveResultFragment"
             app:argType="com.example.loveapp.fragments.LoveResultFragmentArgs"
             app:destination="@id/loveResultFragment" />
+        <action
+            android:id="@+id/action_loveCalcFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/loveResultFragment"
@@ -32,6 +35,27 @@
         <argument
             android:name="result"
             app:argType="string" />
+        <action
+            android:id="@+id/action_loveResultFragment_to_loveCalcFragment"
+            app:destination="@id/loveCalcFragment" />
 
     </fragment>
+    <fragment
+        android:id="@+id/onboardFragment"
+        android:name="com.example.loveapp.fragments.onboard.OnboardFragment"
+        android:label="fragment_onboard"
+        tools:layout="@layout/fragment_onboard" >
+        <action
+            android:id="@+id/action_onboardFragment_to_loveCalcFragment"
+            app:destination="@id/loveCalcFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardViewPagerFragment"
+        android:name="com.example.loveapp.fragments.onboard.OnboardViewPagerFragment"
+        android:label="fragment_onboard_view_pager"
+        tools:layout="@layout/fragment_onboard_view_pager" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.loveapp.fragments.HistoryFragment"
+        android:label="HistoryFragment" />
 </navigation>

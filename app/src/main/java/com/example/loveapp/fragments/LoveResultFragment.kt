@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
 import com.example.loveapp.databinding.FragmentLoveResultBinding
@@ -31,6 +32,10 @@ class LoveResultFragment : Fragment() {
             tvSName.text = args.secondName
             tvScore.text = args.percentage
             tvMessage.text = args.result
+        }
+
+        binding.btnTryAgain.setOnClickListener {
+            findNavController().navigate(LoveResultFragmentDirections.actionLoveResultFragmentToLoveCalcFragment())
         }
     }
 
