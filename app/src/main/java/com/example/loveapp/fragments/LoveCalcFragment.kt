@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.loveapp.App
 import com.example.loveapp.databinding.FragmentLoveCalcBinding
+import com.example.loveapp.model.LoveResult
 import com.example.loveapp.viewmodel.LoveCalcViewModel
 import com.example.loveapp.viewmodel.LoveCalcViewModelFactory
 
@@ -41,17 +42,27 @@ class LoveCalcFragment : Fragment() {
         }
 
         viewModel.loveResult.observe(viewLifecycleOwner) { loveResult ->
+            saveResult(loveResult)
             val action = LoveCalcFragmentDirections.actionLoveCalcFragmentToLoveResultFragment(
                 firstName = loveResult.firstName,
                 secondName = loveResult.secondName,
                 percentage = loveResult.percentage,
                 result = loveResult.result
             )
+
             findNavController().navigate(action)
         }
 
         viewModel.errorMessage.observe(viewLifecycleOwner) { message ->
             Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
         }
+
+        binding.btnHistory.setOnClickListener {
+            findNavController().navigate(LoveCalcFragmentDirections.actionLoveCalcFragmentToHistoryFragment())
+        }
+    }
+
+    private fun saveResult(loveResult: LoveResult) {
+        App().getInstance()?.loveDao()?.insert(loveResult)
     }
 }

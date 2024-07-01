@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -61,4 +62,16 @@ dependencies {
 
     //Pagination
     implementation(libs.androidx.paging.runtime.ktx)
+
+    //lottie animation
+    implementation(libs.lottie)
+
+    //Room
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    //MaterialDesign
+    implementation (libs.material.v1120)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
 }
